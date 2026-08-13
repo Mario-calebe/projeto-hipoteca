@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipoteca</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>Mortgage Calculator</h1>
+        <a href="#">Clear All</a>
+    </header>
+    <main>
+        <section id="calculator">
+            <form action="">
+                <div class="cal" id="LibraEsterlina">
+                    <label for="mort-amount">Mortgage Amount</label>
+                    <input type="number" name="mortgage-amount" id="mort-amount">
+                    <span id="libra">£</span>
+                </div>
+                <div class="cal">
+                    <label for="mort-term">Mortgage Term</label>
+                    <input type="number" name="mortgage-term" id="mort-term">
+                </div>
+                <div class="cal">
+                    <label for="rate">Interest Rate</label>
+                    <input type="number" name="interest-rate" id="rate">
+                </div>
+                <div class="type">
+                    <p>Mortgage Type</p>
+                    <div>
+                        <input type="radio" name="mort-type" id="repay">
+                        <label for="repay">Repayment</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="mort-type" id="interest-only">
+                        <label for="interest-only">Interest Only</label>
+                    </div>
+                    <p id="submit">
+                        <img src="images/icon-calculator.svg" alt="">
+                        <input type="submit" value="Calculate Rapayments">
+                    </p>
+                </div>
+            </form>
+        </section>
+        <section id="result">
+            <h1>Your results</h1>
+            <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
+        </section>
+    </main>
+</body>
+</html>
