@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hipoteca</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -14,28 +15,35 @@
     <main>
         <section id="calculator">
             <form action="">
-                <div class="cal" id="LibraEsterlina">
-                    <label for="mort-amount">Mortgage Amount</label>
-                    <input type="number" name="mortgage-amount" id="mort-amount">
-                    <span id="libra">£</span>
+                <div class="cal">
+                <label for="mort-amount">Mortgage Amount</label>
+                    <div class="LibraEsterlina">
+                        <label for="mort-amount" id="libra">£</label>
+                        <input type="number" name="mortgage-amount" id="mort-amount">
+                    </div>
                 </div>
                 <div class="cal">
                     <label for="mort-term">Mortgage Term</label>
-                    <input type="number" name="mortgage-term" id="mort-term">
+                    <div class="years">
+                        <label for="mort-term" id="y">years</label>
+                        <input type="number" name="mortgage-term" id="mort-term">
+                    </div>
                 </div>
                 <div class="cal">
-                    <label for="rate">Interest Rate</label>
-                    <input type="number" name="interest-rate" id="rate">
+                        <label for="rate">Interest Rate</label>
+                    <div class="por-rate">
+                        <label for="rate" id="porcent">%</label>
+                        <input type="number" name="interest-rate" id="rate">
+                    </div>
                 </div>
                 <div class="type">
                     <p>Mortgage Type</p>
                     <div>
-                        <input type="radio" name="mort-type" id="repay">
-                        <label for="repay">Repayment</label>
+                        
+                        <label for="repay"><input type="radio" name="mort-type" id="repay"><span>Repayment</span></label>
                     </div>
                     <div>
-                        <input type="radio" name="mort-type" id="interest-only">
-                        <label for="interest-only">Interest Only</label>
+                        <label for="interest-only"><input type="radio" name="mort-type" id="interest-only">    <span>Interest Only</span></label>
                     </div>
                     <p id="submit">
                         <img src="images/icon-calculator.svg" alt="">
@@ -45,8 +53,11 @@
             </form>
         </section>
         <section id="result">
-            <h1>Your results</h1>
-            <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
+            <div class="illu">
+                
+            </div>
+            <h1>Results shown here</h1>
+            <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
         </section>
     </main>
 </body>

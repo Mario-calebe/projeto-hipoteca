@@ -20,11 +20,19 @@
 body{
     height: 100vh;
     width: 100vw;
-    padding: 20px;
     font-family: "Plus Jakarta Sans", sans-serif;
     color: var(--Slate-700);
 }
-header, h1{
+main{
+    display: flex;
+    flex-flow: column nowrap;
+    
+}
+header{
+    padding: 20px;
+    padding-bottom: 5px;
+}
+h1{
     margin-bottom: 10px;
 }
 header > h1 {
@@ -32,15 +40,18 @@ header > h1 {
     color: var(--Slate-900);
 }
 header > a {
+    display: block;
     font-size: 16px;    
-    color: var(--Slate-700);
+    color: var(--Slate-500);
+    font-weight: 500;
+    text-decoration: underline;
 }
 section#calculator{
-    height: 100vh;
+    order: 2;
+    padding: 20px;
 }
 section#calculator > form{
     display: flex;
-    height: 100vh;
     flex-flow: column wrap;
     justify-content: flex-start;
     gap: 1em;
@@ -49,63 +60,173 @@ section#calculator > form{
 input{
     color: var(--Slate-900);
 }
-input[type="number"],
 div.type > div,
 input[type="submit"]
 {
     padding: 10px;
     font-size: 1.2em;
-    font-weight: 500;
+    font-weight: 600;
     border-radius: 5px;
     border: 1px solid var(--Slate-700);
 }
-#LibraEsterlina{
-    position: relative;
+input[type="number"]{
+    border: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-indent: 5px;
+    padding: 10px;
+    width: 100%;
 }
-#libra{
-    position: absolute;
-    left: 10px;
-    top: 10px;
+.LibraEsterlina:hover,.years:hover,.por-rate:hover{
+    border: 2px solid var(--Slate-900);
+    
+}
+input[type="number"]:focus-within{
+    outline: none;
+}
+div.cal div:has(input:focus){
+        border: 1px solid var(--Lime);
+}
+#libra:has(+ input[type="number"]:focus),
+#y:has(+ input[type="number"]:focus),
+#porcent:has(+ input[type="number"]:focus)
+{
+    background-color: var(--Lime);
+}
+
+.LibraEsterlina,.years,.por-rate{
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 0px;
+    border-radius: 6px;
+    border: 1px solid var(--Slate-500);
+
+    
+}
+#libra,#y,#porcent{
+    cursor: pointer;
+    align-self: center;
+    padding: 15px;
+    background-color: var(--Slate-100);
+    font-weight: 800;
+}
+#y,#porcent{
+    order: 2;
 }
 div.cal{
-    gap: 1em;
+    gap: .5em;
     display: flex;
     flex-flow: column wrap;
+}
+div.cal > label,div.type > p{
+    font-weight: 700;
 }
 div.type{
     gap: 10px;
     display: flex;
     flex-flow: column wrap  ;
 }
+
 div.type > div{
     text-align: left;
     padding: 10px;
     background-color: transparent;
+    cursor: pointer;
 }
-div.type  label{
+div.type > div:hover{
+    border: 1px solid var(--Lime);
+}
+div.type label{
+    display: inline-block;
+    width: 100%;
+}
+span {
     color: var(--Slate-900);
     display: inline-block;
-    text-indent: 10px;
+    margin-left: 10px;
 }
-input[type="submit"]{
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #838383;
+    border-radius: 50%;
+    position: relative;
+}
+input[type="radio"]:checked{
+    border: 1px solid var(--Lime);
+}
+div.type > div:has(input:checked){
+    background-color: lightyellow;
+    border: 1px solid var(--Lime);
+}
+input[type="radio"]:checked::before{
+    content: "";
+    background-color: var(--Lime);
+    color: var(--Lime);
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    translate: -50%  -50%;
+}
+ /* div.type div:has(input[type="radio"]:checked){
+} */
+#submit{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
     border-radius: 25px;
     width: 100%;
     background-color: var(--Lime);
     border: none;
     font-weight: 700;
 }
-#submit{
-    position: relative;
+#submit:hover{
+    background-color: hsla(61, 70%, 52%, 0.445);
+}
+input[type="submit"]{
+    border: none;
+    background-color: transparent;
+    
 }
 #submit > img{
-    position: absolute;
-    left: 18px;
-    top: 10px;
+    display: block;
+    width: 24px;
+    height: 24px;
 }
 
 
 
 section#result{
-    background-color: var(--Slate-500);
-    height: 100vh;
+    order: 2;
+    background-color: var(--Slate-900);
+    height: 345px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+#result > h1 {
+    color: var(--White);
+    font-size: 22px;
+}
+#result > p{
+    color: var(--Slate-500);
+    font-size: 0.9rem;
+}
+div.illu{
+    width: 192px;
+    height: 192px;
+    background-color: transparent;
+    background-image: url(../images/illustration-empty.svg);
+    background-position: center center;
+    background-size: cover;
 }
