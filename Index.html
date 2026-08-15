@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hipoteca</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/desktop.css">
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <h1>Mortgage Calculator</h1>
-        <a href="#">Clear All</a>
-    </header>
     <main>
         <section id="calculator">
+            <header>
+                <h1>Mortgage Calculator</h1>
+                <a href="#">Clear All</a>
+            </header>
             <form action="">
                 <div class="cal">
                 <label for="mort-amount">Mortgage Amount</label>
@@ -22,18 +23,20 @@
                         <input type="number" name="mortgage-amount" id="mort-amount">
                     </div>
                 </div>
-                <div class="cal">
-                    <label for="mort-term">Mortgage Term</label>
-                    <div class="years">
-                        <label for="mort-term" id="y">years</label>
-                        <input type="number" name="mortgage-term" id="mort-term">
+                <div class="cal-desk">
+                    <div class="cal">
+                        <label for="mort-term">Mortgage Term</label>
+                        <div class="years">
+                            <label for="mort-term" id="y">years</label>
+                            <input type="number" name="mortgage-term" id="mort-term">
+                        </div>
                     </div>
-                </div>
-                <div class="cal">
-                        <label for="rate">Interest Rate</label>
-                    <div class="por-rate">
-                        <label for="rate" id="porcent">%</label>
-                        <input type="number" name="interest-rate" id="rate">
+                    <div class="cal">
+                            <label for="rate">Interest Rate</label>
+                        <div class="por-rate">
+                            <label for="rate" id="porcent">%</label>
+                            <input type="number" name="interest-rate" id="rate">
+                        </div>
                     </div>
                 </div>
                 <div class="type">

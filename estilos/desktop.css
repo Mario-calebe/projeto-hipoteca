@@ -1,0 +1,90 @@
+:root{
+--Lime: hsl(61, 70%, 52%);
+--Red: hsl(4, 69%, 50%);
+
+--White: hsl(0, 0%, 100%);
+--Slate-100: hsl(202, 86%, 94%);
+--Slate-300: hsl(203, 41%, 72%);
+--Slate-500: hsl(200, 26%, 54%);
+--Slate-700: hsl(200, 24%, 40%);
+--Slate-900: hsl(202, 55%, 16%) ;
+}
+@media  screen and (min-width: 1280px) {
+    html{
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--Slate-100);
+    }
+    body{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 1480px;
+        height: 560px;
+        background-color: transparent;
+        overflow: hidden ;
+    }
+    header{
+        margin-bottom: 20px;
+        justify-content: flex-start;
+        align-self: flex-start;
+        background-color: var(--White);
+        border-top-left-radius: 20px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    header > h1 {
+        letter-spacing: -0.01em;
+    }
+    main{
+        border-radius: 20px;
+        background-color: var(--White);
+        height: 100%;        
+        flex-flow: row nowrap;
+        transition: width 1s;
+    }
+    section#calculator{
+        width: 50%;
+        padding: 40px;
+        padding-bottom: 0;
+    }
+    div.type{
+        gap: 10px;
+    }
+    div.cal > label{
+        margin-top: 0;
+    }
+    .cal-desk{
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 20px;
+    }
+    .cal-desk > .cal {
+        width: 50%;
+
+    }
+    #submit{
+        margin-top: 25px;
+        width: 75%;
+        padding: 5px;
+    }
+    section#result{
+        width: 50%;
+        overflow: hidden;
+        height:100%;
+        justify-content: center;
+        border-radius: 0px 20px 20px 80px;
+        line-height: 30px;
+    }
+    #result > h1 {
+    color: var(--White);
+        font-size: 26px;
+    }
+    #result > p{
+        color: var(--Slate-500);
+        font-size: 1.1rem;
+    }
+}
