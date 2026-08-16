@@ -20,7 +20,7 @@
                 <label for="mort-amount">Mortgage Amount</label>
                     <div class="LibraEsterlina">
                         <label for="mort-amount" id="libra">£</label>
-                        <input type="number" name="mortgage-amount" id="mort-amount">
+                        <input type="number" name="mortgage-amount" id="mort-amount" required>
                     </div>
                 </div>
                 <div class="cal-desk">
@@ -28,14 +28,14 @@
                         <label for="mort-term">Mortgage Term</label>
                         <div class="years">
                             <label for="mort-term" id="y">years</label>
-                            <input type="number" name="mortgage-term" id="mort-term">
+                            <input type="number" name="mortgage-term" id="mort-term" required>
                         </div>
                     </div>
                     <div class="cal">
                             <label for="rate">Interest Rate</label>
                         <div class="por-rate">
                             <label for="rate" id="porcent">%</label>
-                            <input type="number" name="interest-rate" id="rate">
+                            <input type="number" name="interest-rate" id="rate" required>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                     </div>
                     <p id="submit">
                         <img src="images/icon-calculator.svg" alt="">
-                        <input type="submit" value="Calculate Rapayments">
+                        <button id="calculate" onclick="Calcular()">Calculate Rapayments</button>
                     </p>
                 </div>
             </form>
@@ -64,4 +64,5 @@
         </section>
     </main>
 </body>
+<script src="script.js"></script>
 </html>

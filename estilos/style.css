@@ -61,7 +61,7 @@ input{
     color: var(--Slate-900);
 }
 div.type > div,
-input[type="submit"]
+#submit > button
 {
     padding: 10px;
     font-size: 1.2em;
@@ -144,6 +144,7 @@ div.type > div:hover{
 div.type label{
     display: inline-block;
     width: 100%;
+    height: 100%;
 }
 span {
     color: var(--Slate-900);
@@ -191,7 +192,7 @@ input[type="radio"]:checked::before{
 #submit:hover{
     background-color: hsla(61, 70%, 52%, 0.445);
 }
-input[type="submit"]{
+#submit > button{
     border: none;
     background-color: transparent;
     
@@ -230,4 +231,8 @@ div.illu{
     background-image: url(../images/illustration-empty.svg);
     background-position: center center;
     background-size: cover;
+}
+/* JAVASCRIPT*/
+p.required{
+    color: var(--Red);
 }
