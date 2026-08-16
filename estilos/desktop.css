@@ -43,7 +43,6 @@
         border-radius: 20px;
         background-color: var(--White);
         flex-flow: row nowrap;
-        transition: width 1s;
     }
     section#calculator{
         width: 50%;
