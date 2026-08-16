@@ -26,7 +26,6 @@ body{
 main{
     display: flex;
     flex-flow: column nowrap;
-    height: 100%;
 }
 header{
     padding-bottom: 5px;
@@ -46,7 +45,6 @@ header > a {
     text-decoration: underline;
 }
 section#calculator{
-    order: 2;
     padding: 20px;
 }
 section#calculator > form{
@@ -60,7 +58,7 @@ section#calculator > form{
 input{
     color: var(--Slate-900);
 }
-div.type > div,
+div.type > label,
 #submit > button
 {
     padding: 10px;
@@ -132,13 +130,13 @@ div.type{
     flex-flow: column wrap  ;
 }
 
-div.type > div{
+div.type > label{
     text-align: left;
     padding: 10px;
     background-color: transparent;
     cursor: pointer;
 }
-div.type > div:hover{
+div.type > label:hover{
     border: 1px solid var(--Lime);
 }
 div.type label{
@@ -206,7 +204,6 @@ input[type="radio"]:checked::before{
 
 
 section#result{
-    order: 2;
     background-color: var(--Slate-900);
     display: flex;
     flex-flow: column nowrap;
@@ -235,4 +232,5 @@ div.illu{
 /* JAVASCRIPT*/
 p.required{
     color: var(--Red);
+    display: none;
 }

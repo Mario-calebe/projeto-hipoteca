@@ -17,40 +17,39 @@
             </header>
             <form action="">
                 <div class="cal">
-                <label for="mort-amount">Mortgage Amount</label>
-                    <div class="LibraEsterlina">
-                        <label for="mort-amount" id="libra">£</label>
+                    <label for="mort-amount">Mortgage Amount</label>
+                    <div class="LibraEsterlina required">
+                        <label for="mort-amount" id="libra" class="required">£</label>
                         <input type="number" name="mortgage-amount" id="mort-amount" required>
                     </div>
+                    <p class="required">This field is required</p>
                 </div>
                 <div class="cal-desk">
                     <div class="cal">
                         <label for="mort-term">Mortgage Term</label>
-                        <div class="years">
-                            <label for="mort-term" id="y">years</label>
+                        <div class="years required">
+                            <label for="mort-term" id="y" class="required">years</label>
                             <input type="number" name="mortgage-term" id="mort-term" required>
                         </div>
+                        <p class="required">This field is required</p>
                     </div>
                     <div class="cal">
-                            <label for="rate">Interest Rate</label>
-                        <div class="por-rate">
-                            <label for="rate" id="porcent">%</label>
+                        <label for="rate">Interest Rate</label>
+                        <div class="por-rate required">
+                            <label for="rate" id="porcent" class="required">%</label>
                             <input type="number" name="interest-rate" id="rate" required>
                         </div>
+                        <p class="required">This field is required</p>
                     </div>
                 </div>
                 <div class="type">
                     <p>Mortgage Type</p>
-                    <div>
-                        
                         <label for="repay"><input type="radio" name="mort-type" id="repay"><span>Repayment</span></label>
-                    </div>
-                    <div>
                         <label for="interest-only"><input type="radio" name="mort-type" id="interest-only">    <span>Interest Only</span></label>
-                    </div>
-                    <p id="submit">
+                    <p class="required">This field is required</p>
+                    <p id="submit" onclick="Calcular()">
                         <img src="images/icon-calculator.svg" alt="">
-                        <button id="calculate" onclick="Calcular()">Calculate Rapayments</button>
+                        <button id="calculate">Calculate Rapayments</button>
                     </p>
                 </div>
             </form>
