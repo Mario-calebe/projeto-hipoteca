@@ -275,7 +275,8 @@ hr{
     border-top: 1px solid var(--hr);
 }
 div.card > h1 {
-    color: var(--Lime);
+    color: var(--Lime) !important;
+    font-size: 2em !important;
 }
 div.card > h2 {
     color: var(--White);

@@ -80,7 +80,7 @@
     color: var(--White);
         font-size: 26px;
     }
-    #results > .pending > p{
+    #results p{
         font-size: 1.2em;
     }
 }

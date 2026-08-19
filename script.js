@@ -40,15 +40,34 @@ function Calcular(){
         monthlypayment = mortvalue * (Imeses * Math.pow(1 + Imeses, meses)) / ((Math.pow(1+Imeses,meses)) -1)    
 
         Payment = monthlypayment * meses
-        interest = Payment - mortvalue
+        interest = Payment 
+        let total = interest.toLocaleString('en-Gb', {
+            style: 'currency',
+            currency: 'GBP'
+        })
+        let mensal = monthlypayment.toLocaleString('en-Gb', {
+            style: 'currency',
+            currency: 'GBP'
+        })
 
-        console.log('mensal:', monthlypayment);
-        console.log('Total:', Payment);
-        console.log('Juros:', interest);
+        h1card.innerText = `${mensal}`
+        h2card.innerText = `${total}`
 
     }else if(radios[1].checked){
         monthlypayment = mortvalue * Imeses
-        interest = monthlypayment * meses
+        interest = monthlypayment * meses + mortvalue
+
+        let total = interest.toLocaleString('en-Gb', {
+            style: 'currency',
+            currency: 'GBP'
+        })
+        let mensal = monthlypayment.toLocaleString('en-Gb', {
+            style: 'currency',
+            currency: 'GBP'
+        })
+        
+        h1card.innerText = `${mensal}`
+        h2card.innerText = `${total}`
 
         console.log('Mensal:', monthlypayment)
         console.log('Juros:', interest)
@@ -57,7 +76,7 @@ function Calcular(){
         if ((amount.value > 0 && term.value > 0 && rate.value > 0) && radios[0].checked || radios[1].checked) {
             pendente.style.display = 'none'
             resultado.style.display = 'block'
-
+            
     }
 
 }
@@ -77,7 +96,6 @@ radios.forEach(function(radioinvalido) {
         p[3].style.display = 'none'
     })
 })
-
 function Clear() {
     inputs.forEach(function(input,i) {
         input.value = ''
@@ -89,4 +107,7 @@ function Clear() {
         radio.checked = false
         p[3].style.display = 'none'
     })
+    resultado.style.display = 'none'
+    pendente.style.display = 'flex'
+    
 }
