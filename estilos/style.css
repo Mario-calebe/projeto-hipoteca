@@ -234,6 +234,16 @@ div.illu{
 }
 /* JAVASCRIPT*/
 p.required{
-    color: var(--Red);
     display: none;
+    color: var(--Red);
+}
+div.type > p.required{
+    font-weight: normal;
+}
+.div-required{
+    border-color: var(--Red) !important;
+}
+.label-required{
+    background-color: hsl(4, 69%, 50%) !important;
+    color: var(--White);
 }
