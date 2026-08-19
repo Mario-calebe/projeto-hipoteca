@@ -10,6 +10,8 @@
 --Slate-500: hsl(200, 26%, 54%);
 --Slate-700: hsl(200, 24%, 40%);
 --Slate-900: hsl(202, 55%, 16%) ;
+--card: #0E2431;
+--hr: hsla(203, 41%, 72%, 0.418);
 }
 *{
     margin: 0;
@@ -27,7 +29,7 @@ main{
     display: flex;
     flex-flow: column nowrap;
 }
-main,section#calculator,#result{
+main,section#calculator,#results{
     transition: all, .5s ease-in-out;
 }
 header{
@@ -206,23 +208,24 @@ input[type="radio"]:checked::before{
 
 
 
-section#result{
+section#results,.pending{
     background-color: var(--Slate-900);
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     text-align: center;
     flex: 1 1 100px;
-    padding: 20px;
+    padding: 15px;
 }
-#result > h1 {
+#results h1 {
     color: var(--White);
     font-size: 22px;
 }
-#result > p{
-    color: var(--Slate-500);
+#results p{
+    color: var(--Slate-300);
     font-size: 0.9rem;
+    padding-bottom: 10px;
 }
 div.illu{
     width: 192px;
@@ -245,5 +248,35 @@ div.type > p.required{
 }
 .label-required{
     background-color: hsl(4, 69%, 50%) !important;
+    color: var(--White);
+}
+div.result{
+    text-align: left;
+    padding: 15px;
+    display: none;
+}
+div.card{
+    margin-top: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: var(--card);
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    border-top:3px solid var(--Lime);
+}
+div.card > p {
+    color: var(--Slate-300);
+}
+hr{
+    border: none;
+    border-top: 1px solid var(--hr);
+}
+div.card > h1 {
+    color: var(--Lime);
+}
+div.card > h2 {
     color: var(--White);
 }

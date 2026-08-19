@@ -9,6 +9,10 @@ let label = document.querySelectorAll(`label.required`)
 let radios = document.querySelectorAll('input[type="radio"]')
 let inputs = [amount,term,rate]
 
+let pendente = document.querySelector('div.pending')
+let resultado = document.querySelector('div.result')
+let h1card = document.querySelector('div.card > h1')
+let h2card = document.querySelector('div.card > h2')
 
 function Calcular(){
     let mortvalue = Number(amount.value)
@@ -17,7 +21,9 @@ function Calcular(){
     
     let meses = anos * 12
     let Imeses = (taxa / 100) / 12 // isto é a taxa a.m
-
+    let monthlypayment
+    let Payment
+    let interest
     inputs.forEach(function(input, i) {
         if (Number(input.value) <= 0) {
             p[i].style.display = 'block'
@@ -26,30 +32,34 @@ function Calcular(){
         }        
     })
 
-    if (radios[0].checked) {
-        let monthlypayment = mortvalue * (Imeses * Math.pow(1 + Imeses, meses)) / ((Math.pow(1+Imeses,meses)) -1)    
+    if (!radios[0].checked && !radios[1].checked) { 
+        p[3].style.display = 'block'
+    }
 
-        let Payment = monthlypayment * meses
-        let interest = Payment - mortvalue
+    if (radios[0].checked) {
+        monthlypayment = mortvalue * (Imeses * Math.pow(1 + Imeses, meses)) / ((Math.pow(1+Imeses,meses)) -1)    
+
+        Payment = monthlypayment * meses
+        interest = Payment - mortvalue
 
         console.log('mensal:', monthlypayment);
         console.log('Total:', Payment);
         console.log('Juros:', interest);
 
     }else if(radios[1].checked){
-        let monthlypayment = mortvalue * Imeses
-        let interest = monthlypayment * meses
+        monthlypayment = mortvalue * Imeses
+        interest = monthlypayment * meses
 
         console.log('Mensal:', monthlypayment)
         console.log('Juros:', interest)
         console.log('Principal:', mortvalue)
     }
+        if ((amount.value > 0 && term.value > 0 && rate.value > 0) && radios[0].checked || radios[1].checked) {
+            pendente.style.display = 'none'
+            resultado.style.display = 'block'
 
-    if (!radios[0].checked && !radios[1].checked) { 
-        p[3].style.display = 'block'
     }
 
-    
 }
 // Função para tirar erro quando escrever
 inputs.forEach( (input, i) => {
@@ -67,6 +77,7 @@ radios.forEach(function(radioinvalido) {
         p[3].style.display = 'none'
     })
 })
+
 function Clear() {
     inputs.forEach(function(input,i) {
         input.value = ''
