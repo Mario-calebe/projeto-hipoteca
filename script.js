@@ -1,18 +1,18 @@
-let amount = document.getElementById('mort-amount')
-let term = document.getElementById('mort-term')
-let rate = document.getElementById('rate')
+const amount = document.getElementById('mort-amount')
+const term = document.getElementById('mort-term')
+const rate = document.getElementById('rate')
 
-let mensagensErro = document.querySelectorAll('p.required')
-let campos = document.querySelectorAll(`div.required`)
-let labels = document.querySelectorAll(`label.required`)// Icones dos campos
+const mensagensErro = document.querySelectorAll('p.required')
+const campos = document.querySelectorAll(`div.required`)
+const labels = document.querySelectorAll(`label.required`)// Icones dos campos
 
-let radios = document.querySelectorAll('input[type="radio"]')
-let inputs = [amount,term,rate]
+const radios = document.querySelectorAll('input[type="radio"]')
+const inputs = [amount,term,rate]
 
-let pendente = document.querySelector('div.pending')
-let resultado = document.querySelector('div.result')
-let h1card = document.querySelector('div.card > h1')
-let h2card = document.querySelector('div.card > h2')
+const pendente = document.querySelector('div.pending')
+const resultado = document.querySelector('div.result')
+const h1card = document.querySelector('div.card > h1')
+const h2card = document.querySelector('div.card > h2')
 
 document.querySelector('form').addEventListener('submit', function(event) {
         event.preventDefault()
@@ -109,7 +109,7 @@ radios.forEach(function(radioinvalido) {
         mensagensErro[3].style.display = 'none'
     })
 })
-function Clear() {
+document.getElementById('Clear').addEventListener('click', function(){
     inputs.forEach(function(input,i) {
         input.value = ''
         mensagensErro[i].style.display = 'none'
@@ -123,5 +123,5 @@ function Clear() {
     resultado.style.display = 'none'
     pendente.style.display = 'flex'
     
-}
+})
 
