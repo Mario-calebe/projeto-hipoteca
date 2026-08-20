@@ -88,7 +88,7 @@ input[type="number"]:focus-within{
     outline: none;
 }
 div.cal div:has(input:focus){
-        border: 1px solid var(--Lime);
+    border: 1px solid var(--Lime);
 }
 #libra:has(+ input[type="number"]:focus),
 #y:has(+ input[type="number"]:focus),
@@ -191,19 +191,31 @@ input[type="radio"]:checked::before{
     background-color: var(--Lime);
     border: none;
     font-weight: 700;
+    cursor: pointer;
 }
 #submit:hover{
     background-color: hsla(61, 70%, 52%, 0.445);
 }
 #submit > button{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     border: none;
     background-color: transparent;
-    
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
 }
-#submit > img{
-    display: block;
+#submit img{
     width: 24px;
     height: 24px;
+}
+#submit > button:focus{
+    outline: none;
+}
+#submit:has(button:focus){
+    background-color: hsla(61, 70%, 52%, 0.445);
+    border: 1px dashed var(--card);
 }
 
 
