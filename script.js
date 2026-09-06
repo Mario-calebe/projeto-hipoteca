@@ -16,7 +16,7 @@ const h2card = document.querySelector('div.card > h2')
 
 document.querySelector('form').addEventListener('submit', function(event) {
         event.preventDefault()
-    //Chamar a função, eu criei a função, mas ela não pertence a um evento, agr ela é CHAMADA quando o evento de submit ocorre!
+    //Chamar a função, eu criei a função (Calcular), mas ela não pertence a um evento, agr ela é CHAMADA quando o evento de submit ocorre!
     Calcular()
 })
 
