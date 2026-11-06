@@ -13,6 +13,7 @@
 --card: #0E2431;
 --hr: hsla(203, 41%, 72%, 0.418);
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -42,10 +43,13 @@ header > h1 {
     font-size: 26px;
     color: var(--Slate-900);
 }
-header > a {
+#Clear {
     display: block;
     font-size: 16px;    
+    cursor: pointer;
     color: var(--Slate-500);
+    background-color: transparent;
+    border: none;
     font-weight: 500;
     text-decoration: underline;
 }
@@ -84,10 +88,10 @@ input[type="number"]{
     border: 1px solid var(--Slate-900);
     
 }
-input[type="number"]:focus-within{
+input[type="number"]:focus{
     outline: none;
 }
-div.cal div:has(input:focus){
+div.cal div:focus-within{
     border: 1px solid var(--Lime);
 }
 #libra:has(+ input[type="number"]:focus),
@@ -161,6 +165,9 @@ input[type="radio"] {
     border: 2px solid #838383;
     border-radius: 50%;
     position: relative;
+    &:focus{
+        outline: 3px solid black;
+    }
 }
 input[type="radio"]:checked{
     border: 1px solid var(--Lime);
@@ -180,6 +187,7 @@ input[type="radio"]:checked::before{
     top: 50%;
     border-radius: 50%;
     translate: -50%  -50%;
+
 }
 #submit{
     display: flex;
@@ -213,7 +221,7 @@ input[type="radio"]:checked::before{
 #submit > button:focus{
     outline: none;
 }
-#submit:has(button:focus){
+#submit:focus-within{
     background-color: hsla(61, 70%, 52%, 0.445);
     border: 1px dashed var(--card);
 }
@@ -230,7 +238,7 @@ section#results,.pending{
     flex: 1 1 100px;
     padding: 15px;
 }
-#results h1 {
+#results h2, .monthly {
     color: var(--White);
     font-size: 22px;
 }
@@ -286,10 +294,14 @@ hr{
     border: none;
     border-top: 1px solid var(--hr);
 }
-div.card > h1 {
+div.card > .monthly {
     color: var(--Lime) !important;
     font-size: 2em !important;
+    font-weight: 500;
 }
-div.card > h2 {
+#results .to-be-paid {
     color: var(--White);
+    font-size: 1.5em;
+    font-weight: 700;
+    padding-bottom: 0;
 }

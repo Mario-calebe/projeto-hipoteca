@@ -6,13 +6,14 @@ const mensagensErro = document.querySelectorAll('p.required')
 const campos = document.querySelectorAll(`div.required`)
 const labels = document.querySelectorAll(`label.required`)// Icones dos campos
 
+const form = document.getElementById('formulario')
 const radios = document.querySelectorAll('input[type="radio"]')
 const inputs = [amount,term,rate]
 
 const pendente = document.querySelector('div.pending')
 const resultado = document.querySelector('div.result')
-const h1card = document.querySelector('div.card > h1')
-const h2card = document.querySelector('div.card > h2')
+const monthly = document.querySelector('div.card > .monthly')
+const to_be_paid = document.querySelector('div.card > .to-be-paid')
 
 document.querySelector('form').addEventListener('submit', function(event) {
         event.preventDefault()
@@ -30,6 +31,7 @@ function Calcular(){
     let monthlypayment
     let Payment
     let interest
+    let primeiroErro = null
 
     let erro = false
     inputs.forEach(function(input, i) {
@@ -37,20 +39,25 @@ function Calcular(){
             mensagensErro[i].style.display = 'block'
             campos[i].classList.add('div-required')
             labels[i].classList.add('label-required')
-            
+            if (primeiroErro === null) {
+                primeiroErro = input
+            }
             erro = true
         }        
     })
 
     if (!radios[0].checked && !radios[1].checked) { 
         mensagensErro[3].style.display = 'block'
-        return
+        if (primeiroErro === null) {
+            primeiroErro = radios[0]
+        }
+        erro = true
     }
 
     if (erro) {
+        primeiroErro.focus()
         return
     }
-
 
     if (radios[0].checked) {
         monthlypayment = mortvalue * (taxamensal * Math.pow(1 + taxamensal, meses)) / ((Math.pow(1+taxamensal,meses)) -1)    
@@ -66,8 +73,8 @@ function Calcular(){
             currency: 'GBP'
         })
 
-        h1card.innerText = `${mensal}`
-        h2card.innerText = `${total}`
+        monthly.innerText = `${mensal}`
+        to_be_paid.innerText = `${total}`
 
     }else if(radios[1].checked){
         monthlypayment = mortvalue * taxamensal
@@ -82,16 +89,13 @@ function Calcular(){
             currency: 'GBP'
         })
         
-        h1card.innerText = `${mensal}`
-        h2card.innerText = `${total}`
+        monthly.innerText = `${mensal}`
+        to_be_paid.innerText = `${total}`
 
-        // console.log('Mensal:', monthlypayment)
-        // console.log('Juros:', interest)
-        // console.log('Principal:', mortvalue)
     }
     pendente.style.display = 'none'
     resultado.style.display = 'block'
-
+    
 }
 // Função para tirar erro quando escrever
 inputs.forEach( (input, i) => {

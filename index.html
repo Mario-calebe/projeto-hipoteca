@@ -13,9 +13,9 @@
         <section id="calculator">
             <header>
                 <h1>Mortgage Calculator</h1>
-                <a href="#"id="Clear">Clear All</a>
+                <button id="Clear" type="button">Clear All</button>
             </header>
-            <form>
+            <form id="formulario">
                 <div class="cal">
                     <label for="mort-amount">Mortgage Amount</label>
                     <div class="LibraEsterlina required">
@@ -66,19 +66,19 @@
             <div class="pending">
                 <div class="illu">
                 </div>
-                <h1>Results shown here</h1>
+                <h2>Results shown here</h2>
                 <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
             </div>
             <!-- Resultado! -->
             <div class="result" aria-live="polite">
-                <h1>Your results</h1>
+                <h2>Your results</h2>
                 <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p>
                 <div class="card">
-                    <p>Your monthyl repayment</p>
-                    <h1>£1,797.74</h1>
+                    <p>Your monthly repayment</p>
+                    <p class="monthly">£1,797.74</p>
                     <hr>
                     <p>Total you'll repay over the term</p>
-                    <h2>£539,322.94</h2>
+                    <p class="to-be-paid">£539,322.94</p>
                 </div>
             </div>
         </section>
